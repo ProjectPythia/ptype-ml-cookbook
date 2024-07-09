@@ -634,7 +634,7 @@ The shape of the Dataframe is (2000, 6)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f8dca6b7f10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fd1d702f0d0&gt;
 </pre></div>
 </div>
 <img alt="../_images/c5cb6222393a85e33aa6aeb9b458c45070a81aa5c0d094e50d683bb815bcbea7.png" src="../_images/c5cb6222393a85e33aa6aeb9b458c45070a81aa5c0d094e50d683bb815bcbea7.png" />
@@ -1169,6 +1169,33 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create scatter plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="c1"># Add axis labels</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;True Values&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Predicted Values&#39;</span><span class="p">)</span>
+
+<span class="c1"># Set the same limits for both axes</span>
+<span class="n">min_val</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">y_test</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">y_pred</span><span class="p">))</span>
+<span class="n">max_val</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">y_test</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_pred</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">min_val</span><span class="p">,</span> <span class="n">max_val</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">min_val</span><span class="p">,</span> <span class="n">max_val</span><span class="p">)</span>
+
+<span class="c1"># Add a diagonal line for reference</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">min_val</span><span class="p">,</span> <span class="n">max_val</span><span class="p">],</span> <span class="p">[</span><span class="n">min_val</span><span class="p">,</span> <span class="n">max_val</span><span class="p">],</span> <span class="s1">&#39;r--&#39;</span><span class="p">)</span>
+
+<span class="c1"># Show the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c1ab7264690ee36a467b148982d3f5456144076043472e926ac92625c3c553b4.png" src="../_images/c1ab7264690ee36a467b148982d3f5456144076043472e926ac92625c3c553b4.png" />
+</div>
+</div>
 </section>
 <section id="regression-metrics">
 <h3>Regression Metrics<a class="headerlink" href="#regression-metrics" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
@@ -1338,7 +1365,7 @@ R-squared (R2) on Validation Set: 0.95
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f8da82ee6b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fd1bc7ded10&gt;
 </pre></div>
 </div>
 <img alt="../_images/8956c639c2267a9019c40034fc67ff729bfd3f9dc94ed47c4c6dc6b595aac7f4.png" src="../_images/8956c639c2267a9019c40034fc67ff729bfd3f9dc94ed47c4c6dc6b595aac7f4.png" />
@@ -1400,6 +1427,7 @@ R-squared (R2) on Validation Set: 0.95
 </div>
 </div>
 </div>
+<p>Notice the new model! We will be using a <a class="reference external" href="https://scikit-learn.org/stable/modules/tree.html">Decision Tree</a>. If you want to learn more, here is a StatQuest <a class="reference external" href="https://www.youtube.com/watch?v=_L39rN6gz7Y">video</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Decision Tree Regressor</span>
@@ -1846,12 +1874,40 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMSE on Test Set: 2.79
-R-squared (R2) on Test Set: 0.58
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMSE on Test Set: 2.75
+R-squared (R2) on Test Set: 0.59
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create scatter plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_test2</span><span class="p">,</span> <span class="n">y_pred2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="c1"># Add axis labels</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;True Values&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Predicted Values&#39;</span><span class="p">)</span>
+
+<span class="c1"># Set the same limits for both axes</span>
+<span class="n">min_val</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">y_test2</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">y_pred2</span><span class="p">))</span>
+<span class="n">max_val</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">y_test2</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_pred2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">min_val</span><span class="p">,</span> <span class="n">max_val</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">min_val</span><span class="p">,</span> <span class="n">max_val</span><span class="p">)</span>
+
+<span class="c1"># Add a diagonal line for reference</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">min_val</span><span class="p">,</span> <span class="n">max_val</span><span class="p">],</span> <span class="p">[</span><span class="n">min_val</span><span class="p">,</span> <span class="n">max_val</span><span class="p">],</span> <span class="s1">&#39;r--&#39;</span><span class="p">)</span>
+
+<span class="c1"># Show the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/23da4ef81f1c5965180ef2d6133dcef650809f7d2d3c6f4fc472309df2987323.png" src="../_images/23da4ef81f1c5965180ef2d6133dcef650809f7d2d3c6f4fc472309df2987323.png" />
+</div>
+</div>
+<p>What do you notice in this scatter plot compared to the one with rain vs snow?</p>
 </section>
 <section id="validation-set-ml">
 <h3>Validation Set ML<a class="headerlink" href="#validation-set-ml" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
@@ -1870,8 +1926,8 @@ R-squared (R2) on Test Set: 0.58
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMSE on Validation Set: 2.62
-R-squared (R2) on Validation Set: 0.68
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMSE on Validation Set: 2.48
+R-squared (R2) on Validation Set: 0.72
 </pre></div>
 </div>
 </div>
