@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Atmospheric Data - Regression ML Example &#8212; Project Pythia Cookbook Template</title>
+    <title>Regression ML Analysis - Atmospheric Data Quick Start &#8212; Project Pythia Cookbook Template</title>
   
   
   
@@ -77,7 +77,7 @@
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="10 July 2024"/>
+    <meta name="docbuild:last-update" content="22 July 2024"/>
   </head>
   
   
@@ -368,10 +368,6 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="how-to-cite.html">How to Cite This Cookbook</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="notebook-template.html">Project Pythia Notebook Template</a></li>
-</ul>
 
     </div>
 </nav></div>
@@ -400,8 +396,8 @@
 <div id="searchbox"></div>
                   <article class="bd-article">
                     
-  <section class="tex2jax_ignore mathjax_ignore" id="atmospheric-data-regression-ml-example">
-<h1>Atmospheric Data - Regression ML Example<a class="headerlink" href="#atmospheric-data-regression-ml-example" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="regression-ml-analysis-atmospheric-data-quick-start">
+<h1>Regression ML Analysis - Atmospheric Data Quick Start<a class="headerlink" href="#regression-ml-analysis-atmospheric-data-quick-start" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
 <hr class="docutils" />
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
@@ -411,7 +407,7 @@
 <li><p>Splitting Dataset and Scaling Data</p></li>
 <li><p>Training, Testing, and Validating Model</p></li>
 </ol>
-<p>This is a MVP (or minimum viable product) for ML modeling analysis. There are many more things we could test and add to this. The dataset itself is also very small for fast loading and general speed.</p>
+<p>This is a MVP (or minimum viable product) for ML modeling analysis. There are many more things we could test and add to this. The dataset itself is also very small for fast loading and general speed. This CookBook is meant to be a companion to <a class="reference external" href="https://www.unidata.ucar.edu/">Unidata’s</a> Cybertraining project.</p>
 </section>
 <section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
@@ -423,15 +419,19 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://pandas.pydata.org/docs/user_guide/10min.html">10 minutes to pandas</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://elearning.unidata.ucar.edu/dataeLearning/Cybertraining/foundations/#/">Machine Learning Foundations in the Earth Systems Sciences</a></p></td>
 <td><p>Necessary</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://matplotlib.org/stable/tutorials/pyplot.html">Pyplot tutorial</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://pandas.pydata.org/docs/user_guide/10min.html">10 minutes to pandas</a></p></td>
+<td><p>Necessary</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://matplotlib.org/stable/tutorials/pyplot.html">Pyplot tutorial</a></p></td>
 <td><p>Helpful</p></td>
 <td><p>Necessary</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://numpy.org/doc/stable/user/absolute_beginners.html">Numpy: the absolute basics for beginners</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://numpy.org/doc/stable/user/absolute_beginners.html">Numpy: the absolute basics for beginners</a></p></td>
 <td><p>Great to have</p></td>
 <td><p>arrays are the language of machine learning</p></td>
 </tr>
@@ -626,10 +626,10 @@ The shape of the Dataframe is (2000, 6)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f0c2ecabd90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f2ced90c7f0&gt;
 </pre></div>
 </div>
-<img alt="../_images/c5cb6222393a85e33aa6aeb9b458c45070a81aa5c0d094e50d683bb815bcbea7.png" src="../_images/c5cb6222393a85e33aa6aeb9b458c45070a81aa5c0d094e50d683bb815bcbea7.png" />
+<img alt="../_images/8df15103bd27656dbe4e9c673838f9b4b965d33b00032ce677ee518c24799f89.png" src="../_images/8df15103bd27656dbe4e9c673838f9b4b965d33b00032ce677ee518c24799f89.png" />
 </div>
 </div>
 <p>Notice any trends so far? What input features might be the most important?</p>
@@ -645,7 +645,7 @@ The shape of the Dataframe is (2000, 6)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3430a4d02763721a33c537a3644b13a0d638d7659b3ef9428d4b306c5a04e320.png" src="../_images/3430a4d02763721a33c537a3644b13a0d638d7659b3ef9428d4b306c5a04e320.png" />
+<img alt="../_images/531a972ff2e2ee68e2ea35b20af26ef8b69de3ab3cc4bb65b669722e8a3ec5d9.png" src="../_images/531a972ff2e2ee68e2ea35b20af26ef8b69de3ab3cc4bb65b669722e8a3ec5d9.png" />
 </div>
 </div>
 </section>
@@ -1186,7 +1186,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c1ab7264690ee36a467b148982d3f5456144076043472e926ac92625c3c553b4.png" src="../_images/c1ab7264690ee36a467b148982d3f5456144076043472e926ac92625c3c553b4.png" />
+<img alt="../_images/ce4f66e1be778b9a689932ec07da6a8f3ab15e2bbb5398f3d02f1fff60b9d668.png" src="../_images/ce4f66e1be778b9a689932ec07da6a8f3ab15e2bbb5398f3d02f1fff60b9d668.png" />
 </div>
 </div>
 </section>
@@ -1361,10 +1361,10 @@ R-squared (R2) on Validation Set: 0.95
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f0bfc587160&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f2cbe4f7f10&gt;
 </pre></div>
 </div>
-<img alt="../_images/8956c639c2267a9019c40034fc67ff729bfd3f9dc94ed47c4c6dc6b595aac7f4.png" src="../_images/8956c639c2267a9019c40034fc67ff729bfd3f9dc94ed47c4c6dc6b595aac7f4.png" />
+<img alt="../_images/9aa873dc2c543afc8f29c8a0ccc59914e9cec9dffbcaf38681900319bef7c007.png" src="../_images/9aa873dc2c543afc8f29c8a0ccc59914e9cec9dffbcaf38681900319bef7c007.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1377,7 +1377,7 @@ R-squared (R2) on Validation Set: 0.95
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7d83083d4ffe3aefd7589d669504aca955cfe5f08cf63f116a32cf52f970cf99.png" src="../_images/7d83083d4ffe3aefd7589d669504aca955cfe5f08cf63f116a32cf52f970cf99.png" />
+<img alt="../_images/37d9f8cb31b9e4ee43c57719152d88407362058809728ac604cb5da1dbf830ff.png" src="../_images/37d9f8cb31b9e4ee43c57719152d88407362058809728ac604cb5da1dbf830ff.png" />
 </div>
 </div>
 <p>What are the differences in EDA compared to rain vs snow? Do you expect this to do better or worse compared to rain vs snow?</p>
@@ -1870,8 +1870,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMSE on Test Set: 2.82
-R-squared (R2) on Test Set: 0.57
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMSE on Test Set: 2.81
+R-squared (R2) on Test Set: 0.58
 </pre></div>
 </div>
 </div>
@@ -1900,7 +1900,7 @@ R-squared (R2) on Test Set: 0.57
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0cd1d501adc2bf70b630289ab5eca9a725de70f2b62d7b5c8c230a724a7cbed1.png" src="../_images/0cd1d501adc2bf70b630289ab5eca9a725de70f2b62d7b5c8c230a724a7cbed1.png" />
+<img alt="../_images/bbfe277af871ebdc47aed6da81ab4881ef9049707e40d83f0898d56095e9a175.png" src="../_images/bbfe277af871ebdc47aed6da81ab4881ef9049707e40d83f0898d56095e9a175.png" />
 </div>
 </div>
 <p>What do you notice in this scatter plot compared to the one with rain vs snow?</p>
@@ -1922,8 +1922,8 @@ R-squared (R2) on Test Set: 0.57
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMSE on Validation Set: 2.72
-R-squared (R2) on Validation Set: 0.66
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMSE on Validation Set: 2.67
+R-squared (R2) on Validation Set: 0.67
 </pre></div>
 </div>
 </div>
@@ -2283,7 +2283,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 10 July 2024.
+  Last updated on 22 July 2024.
   <br/>
 </p>
   </div>
@@ -2337,7 +2337,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 10 July 2024.
+          Last updated on 22 July 2024.
         </p>
       </div>
     </div>
