@@ -1,1 +1,1 @@
-import{a}from"/ptype-ml-cookbook/build/_shared/chunk-2YEAM2KW.js";import"/ptype-ml-cookbook/build/_shared/chunk-7H4MNJGC.js";import"/ptype-ml-cookbook/build/_shared/chunk-ZOXRFJWB.js";import"/ptype-ml-cookbook/build/_shared/chunk-2NH4LW52.js";export default a();
+import{a}from"/ptype-ml-cookbook/_preview/5/build/_shared/chunk-2YEAM2KW.js";import"/ptype-ml-cookbook/_preview/5/build/_shared/chunk-7H4MNJGC.js";import"/ptype-ml-cookbook/_preview/5/build/_shared/chunk-ZOXRFJWB.js";import"/ptype-ml-cookbook/_preview/5/build/_shared/chunk-2NH4LW52.js";export default a();
