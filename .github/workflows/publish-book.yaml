@@ -9,8 +9,8 @@ on:
 
 jobs:
   build:
-    uses: ProjectPythia/cookbook-actions/.github/workflows/build-book.yaml@main
+    uses: ProjectPythia/cookbook-actions/.github/workflows/build-book.yaml@feat/clinder
 
   deploy:
     needs: build
-    uses: ProjectPythia/cookbook-actions/.github/workflows/deploy-book.yaml@main
+    uses: ProjectPythia/cookbook-actions/.github/workflows/deploy-book.yaml@feat/clinder
