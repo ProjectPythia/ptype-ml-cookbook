@@ -3,6 +3,10 @@ extends:
   - https://raw.githubusercontent.com/projectpythia/pythia-config/main/pythia.yml
 project:
   title: Ptype ML Cookbook
+  thumbnail: ./thumbnail.png
+  tags:
+    - domain:machine-learning
+    - package:scikit-learn
   authors:
     - name: Project Pythia Community
       url: https://projectpythia.org/
