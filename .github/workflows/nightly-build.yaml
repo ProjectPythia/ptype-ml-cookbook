@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    if: ${{ github.repository_owner == 'ProjectPythia' }}
+    #if: ${{ github.repository_owner == 'ProjectPythia' }}
     uses: agoose77/cookbook-actions/.github/workflows/build-book.yaml@feat/clinder
   deploy:
     needs: build
