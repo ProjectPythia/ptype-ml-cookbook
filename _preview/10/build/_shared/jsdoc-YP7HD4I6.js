@@ -1,1 +1,0 @@
-import{a}from"/ptype-ml-cookbook/_preview/10/build/_shared/chunk-VZXSIKCR.js";import"/ptype-ml-cookbook/_preview/10/build/_shared/chunk-XK3K4AT7.js";import"/ptype-ml-cookbook/_preview/10/build/_shared/chunk-MRS6DOXX.js";import"/ptype-ml-cookbook/_preview/10/build/_shared/chunk-OZE3FFNP.js";export default a();
