@@ -8,8 +8,6 @@ on:
   workflow_dispatch:
 
 jobs:
-
-jobs:
   build:
     uses: ProjectPythia/cookbook-actions/.github/workflows/build-book.yaml@feat/clinder
   deploy:
