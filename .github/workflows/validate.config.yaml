@@ -1,0 +1,7 @@
+name: validate-config
+on:
+  pull_request:
+
+jobs:
+  link-check:
+    uses: ProjectPythia/cookbook-actions/.github/workflows/validate-config.yaml@main
